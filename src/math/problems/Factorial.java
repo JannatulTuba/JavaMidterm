@@ -13,7 +13,7 @@ public class Factorial {
     //This function calculates Factorial using recursion
     public static int Factorial(int num){
 
-    if (num == 1){
+    if (num == 1 || num ==0){
         return 1;
     }
     else {
@@ -38,7 +38,7 @@ public class Factorial {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter any number: ");
+        System.out.println("Enter a positive number: ");
         int number = input.nextInt();
         System.out.println("Result using Recursion: " + Factorial(number));
         System.out.println("Result using Iteration: " + Iteration(number));
