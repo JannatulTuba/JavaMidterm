@@ -1,6 +1,5 @@
 package math.problems;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Fibonacci {
