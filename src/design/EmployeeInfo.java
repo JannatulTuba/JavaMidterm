@@ -1,8 +1,11 @@
 package design;
 
+import algorithm.Sort;
+
+import javax.sound.midi.Soundbank;
 import java.util.Scanner;
 
-public class EmployeeInfo {
+public class EmployeeInfo  extends AbstractEmployee{
 
     /*
     This class should implement the Employee interface. You can do that by directly implementing it, however you must
@@ -20,8 +23,8 @@ public class EmployeeInfo {
     /*
      * Make sure to declare and use static, non-static & final fields
      */
-    static String companyName;
-
+    final String  COMPANYNAME = "Apple";
+    Scanner sc = new Scanner(System.in);
     /*
      You must implement the logic for below 2 methods and
         following 2 methods are prototype as well for other methods need to be design,
@@ -38,6 +41,117 @@ public class EmployeeInfo {
     public EmployeeInfo(String name, int employeeId) {
 
     }
+   public  void startService(){
+       System.out.println("************************* Employee Service******************************");
+       System.out.println("1: Calculate Salary \n 2: Calculate Pension \n 3: Apply For Vacation \n 4: Join Training \n 5:calculateEmployeeBonus \n 6: View Benefits \n Select Action");
+       int num = sc.nextInt();
+       if(num == 1){
+           System.out.println(calculateSalary());
+           startService();
+       }
+       if(num == 2){
+           System.out.println(calculateEmployeePension());
+           startService();
+       }
+       if(num == 3){
+        applyForVacation();
+           startService();
+       }
+       if(num == 4){
+         joinTraining();
+           startService();
+       }
+       if(num == 5){
+           System.out.println(calculateEmployeeBonus());
+           startService();
+       }
+       if(num == 6){
+         benefitLayout();
+           startService();
+       }
+   }
+    //
+    //employeeId() will return employee id.
+    @Override
+    public int employeeId(){
+        System.out.println(" ENTER EMPLOYEE ID: " );
+        int id = sc.nextInt();
+        return id;
+    }
+
+
+    //employeeName() will return employee name
+
+    @Override
+    public String   employeeName(){
+        System.out.println(" Enter Employee Name: ");
+        String name = sc.next();
+        return name;
+
+    }
+
+    //assignDepartment() will assign employee to departments
+    @Override
+    public void assignDepartment(){
+        System.out.println("Select department 1: IT \n 2: Accounts \n 3: HR \n 4: Management");
+        int num = sc.nextInt();
+        if(num ==1)
+            System.out.println("IT");
+        else if(num ==2)
+            System.out.println("Accounts");
+       else if(num ==3)
+            System.out.println("Hr");
+       else if(num ==4)
+            System.out.println("Management");
+    }
+
+    //calculate employee salary
+    @Override
+    public int calculateSalary(){
+        System.out.println(" ENTER base SALARY: ");
+        int baseSalary = sc.nextInt();
+        double  commission = baseSalary*(30/100);
+        return (int) (baseSalary+commission);
+    }
+
+    //employee benefit
+    @Override
+    public void benefitLayout(){
+        System.out.println("Select benefits 1: Travel \n 2: Health \n 3: Pension \n 4: Food");
+        int num = sc.nextInt();
+        if(num ==1)
+            System.out.println("Travel");
+        else if(num ==2)
+            System.out.println("Health");
+        else if(num ==3)
+            System.out.println("Pension");
+        else if(num ==4)
+            System.out.println("Food");
+    }
+
+
+    public void joinTraining(){
+        System.out.println("Select training to join 1: Management \n 2: Software Development ");
+        int num = sc.nextInt();
+        if(num ==1)
+            System.out.println("Management");
+        else if(num ==2)
+            System.out.println("Software Development");
+
+    }
+
+    public void applyForVacation(){
+        System.out.println("Enter for how many days you want vacation: ");
+        int days = sc.nextInt();
+        if(days <2 ){
+            System.out.println("Please Wait for approval");
+        }else {
+            System.out.println("Talk to authorities");
+        }
+
+
+    }
+
 
     /*
      You need to implement the logic of this method as such:
@@ -47,9 +161,32 @@ public class EmployeeInfo {
             You can set arbitrary number for performance, so you probably need to send 2 arguments.
      *
      */
-    public static int calculateEmployeeBonus(int numberOfYearsWithCompany) {
+    public  int calculateEmployeeBonus() {
+        Scanner sc = new Scanner(System.in);
+        int performanceScore = sc.nextInt();
         int total = 0;
+        double employeeBonus =0.0;
+        System.out.println("Enter number of your job years: ");
+        int numberOfYearsWithCompany =sc.nextInt();
+        if(numberOfYearsWithCompany >=1){
+            if(performanceScore <=100 & performanceScore >= 90){
+                employeeBonus = calculateSalary() * 0.1;
+
+            }
+            else if(performanceScore <= 89 & performanceScore >= 70){
+                employeeBonus = calculateSalary() * 0.08;
+            }
+            else if(performanceScore <= 69 & performanceScore >= 50){
+                employeeBonus = calculateSalary() * .05;
+            }
+        }
+        else {
+            employeeBonus = 0.0;
+        }
+
+        total = calculateSalary() + (int) employeeBonus;
         return total;
+
     }
 
     /*
@@ -59,7 +196,7 @@ public class EmployeeInfo {
             Example: Employee will receive 5% of salary as pension for every year they are with the company
      *
      */
-    public static int calculateEmployeePension() {
+    public  int calculateEmployeePension() {
         int total = 0;
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter start date in format (example: May,2015): ");
@@ -68,10 +205,16 @@ public class EmployeeInfo {
         String todaysDate = sc.nextLine();
         String convertedJoiningDate = DateConversion.convertDate(joiningDate);
         String convertedTodaysDate = DateConversion.convertDate(todaysDate);
+        String[] dateArrayJoin = convertedJoiningDate.split(",");
+        String[] dateArrayToday =convertedTodaysDate.split(",");
+
 
         // Figure out how to extract the number of years the employee has been with the company, using the above 2 dates
+        int year = Integer.parseInt(dateArrayToday[1])- Integer.parseInt(dateArrayJoin[1]);
         // Calculate pension
 
+        double pension = calculateSalary()* 0.05  * year;
+        total = calculateSalary() + (int)pension;
         return total;
     }
 

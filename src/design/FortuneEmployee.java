@@ -14,8 +14,13 @@ public class FortuneEmployee {
      Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
      </p>
      **/
+
+
     public static void main(String[] args) {
 
+        EmployeeInfo employee = new EmployeeInfo(1);
+       // System.out.println(employee1.employeeId(1));
+        employee.startService();
     }
 
 }
