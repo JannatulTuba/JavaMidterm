@@ -120,12 +120,16 @@ Answer: : Relational Database Management System (RDBMS) = Array (i.e. Array of s
         child node could have only one parent. = Tree
 
 How do HashMaps work in Java? How do they store values, and when are they useful?
-Answer: : Relational Database Management System (RDBMS) = Array (i.e. Array of structures)
-        Network data is a database model conceived as a flexible way of representing objects and their
-        relationships. = Graph
-        A hierarchical data model was one of the earliest data models. This model was a file based
-        model built like a tree. In this tree, a parent could be associated with multiple child nodes, but a
-        child node could have only one parent. = Tree
+Answer: :A HashMap designates unique keys to corresponding values that can be retrieved at
+         any given point. In Java, HasMap works on hashing principles. It is a data structure which
+         allows the storage of an object and retrieval in constant time O(1) provided that the key is
+         known. In hashing, hash functions are used to link key and value in HashMap. Objects are
+         stored by calling the put(key, value) method of HashMap and retrieved by calling get(key)
+         method. When we call the put method, the hashcode() method of the key object is called so that
+         the hash function of the map can find a bucket location to store a value object, which is actually
+         an index of the internal array, known as the table. Using HashMap makes sense only when
+         unique keys are available for the data being stored. It should be used when searching for items
+         based on a key and when quick access time is an important requirement.
 
 What is ArrayIndexOutOfBoundsException in java? When does it occur?
 Answer:ArrayIndexOutOfBoundsException is a runtime unchecked exception. It occurs when
