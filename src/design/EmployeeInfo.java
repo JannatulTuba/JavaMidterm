@@ -110,7 +110,7 @@ public class EmployeeInfo  extends AbstractEmployee{
     public int calculateSalary(){
         System.out.println(" ENTER base SALARY: ");
         int baseSalary = sc.nextInt();
-        double  commission = baseSalary*(30/100);
+        double  commission = baseSalary*(10/100);
         return (int) (baseSalary+commission);
     }
 
@@ -162,29 +162,31 @@ public class EmployeeInfo  extends AbstractEmployee{
      *
      */
     public  int calculateEmployeeBonus() {
+        System.out.println("Enter Performance score: ");
         Scanner sc = new Scanner(System.in);
         int performanceScore = sc.nextInt();
+        int salary = calculateSalary();
         int total = 0;
         double employeeBonus =0.0;
         System.out.println("Enter number of your job years: ");
         int numberOfYearsWithCompany =sc.nextInt();
         if(numberOfYearsWithCompany >=1){
             if(performanceScore <=100 & performanceScore >= 90){
-                employeeBonus = calculateSalary() * 0.1;
+                employeeBonus = salary* 0.1;
 
             }
             else if(performanceScore <= 89 & performanceScore >= 70){
-                employeeBonus = calculateSalary() * 0.08;
+                employeeBonus = salary * 0.08;
             }
             else if(performanceScore <= 69 & performanceScore >= 50){
-                employeeBonus = calculateSalary() * .05;
+                employeeBonus = salary * .05;
             }
         }
         else {
             employeeBonus = 0.0;
         }
 
-        total = calculateSalary() + (int) employeeBonus;
+        total = salary + (int) employeeBonus;
         return total;
 
     }
