@@ -7,10 +7,12 @@ Answer:  Data Structures are the main part of many computer science algorithms a
         retrieve the user's data as fast as possible.
 
 What are the various operations that can be performed on different data structures?
-Answer:  Data Structures are the main part of many computer science algorithms as they
-        enable the programmers to handle the data in an efficient way. It plays a vital role in enhancing
-        the performance of a software or a program as the main function of the software is to store and
-        retrieve the user's data as fast as possible.
+Answer:  Insertion means inserting any element in the data structure.
+         Deletion: Deletion means deleting an element from the data structure.
+         Searching: Searching means finding a particular element from the data structure.
+         Sorting: Sorting means organizing the elements in data structure in Ascending or descending
+         order.
+         Traversing: Traversing means visiting each component in the data structure.
 
 When would we use data structures in the real world?
 Answer: To implement back functionality in the internet browser. To store the possible moves in
@@ -18,9 +20,10 @@ Answer: To implement back functionality in the internet browser. To store the po
         the customer order information in a drive-in burger place. So on and so forth.
 
 What is an Array?
-Answer: To implement back functionality in the internet browser. To store the possible moves in
-        a chess game. To store a set of fixed keywords which are referenced very frequently. To store
-        the customer order information in a drive-in burger place. So on and so forth.
+Answer: : An array is a data structure that contains a group of elements. Typically these
+        elements are all of the same data type such as string or integer. They are commonly used in
+        computer programs to organize data.
+
 
 What is the difference between Array and ArrayList?
 Answer:  An array is basic functionality provided by Java. ArrayList is part of the collection
