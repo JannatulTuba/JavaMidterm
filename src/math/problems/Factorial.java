@@ -11,19 +11,19 @@ public class Factorial {
      */
 
     //This function calculates Factorial using recursion
-    public static int Factorial(int num){
+    public static int factorial(int num){
 
     if (num == 1 || num ==0){
         return 1;
     }
     else {
-        return num * Factorial(num -1 );
+        return num * factorial(num -1 );
     }
 
     }
 
     //This function calculates Factorial using Iteration
-    public static int Iteration(int num){
+    public static int iteration(int num){
 
         int result = 1;
 
@@ -40,8 +40,8 @@ public class Factorial {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter a positive number: ");
         int number = input.nextInt();
-        System.out.println("Result using Recursion: " + Factorial(number));
-        System.out.println("Result using Iteration: " + Iteration(number));
+        System.out.println("Result using Recursion: " + factorial(number));
+        System.out.println("Result using Iteration: " + iteration(number));
 
     }
 }
