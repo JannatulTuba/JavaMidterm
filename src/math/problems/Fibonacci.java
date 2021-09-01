@@ -14,13 +14,13 @@ public class Fibonacci {
 
      */
 
-    public  static  void Fibonacci(int num){
+    public static  int[] Fibonacci(int num){
         int i = 0;
 
         int lastResult= 1;
         int secondLastResult = 0;
         int result = 0;
-
+        int[] arr= new int[num+1];
         while ( i <= num){
 
             if ( i ==0 || i == 1){
@@ -30,13 +30,14 @@ public class Fibonacci {
                 result = lastResult + secondLastResult;
 
             }
+            arr[i] = result;
             System.out.print(result + " ");
             secondLastResult =  lastResult;
             lastResult = result;
             i++;
 
         }
-
+return arr;
     }
     public static void main(String[] args) {
 
