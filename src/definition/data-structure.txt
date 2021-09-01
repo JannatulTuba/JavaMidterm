@@ -66,6 +66,7 @@ Answer: The Queue interface present in the java.util package and extends the Col
         deleting elements from the start of the list. The Queue interface is declared as: public interface
         Queue extends Collection
 
+
 What is FIFO and LIFO?
 Answer: FIFO is an abbreviation for first in, first out. It is a method for handling data structures
         where the first element is processed first and the newest element is processed last.
@@ -88,12 +89,8 @@ Answer:  Big O Notation describes the time or space required for the execution i
         because the growth rate of a function is also referred to as the order of the function
 
 What is the best case to search an element from an array?
-Answer:  Big O Notation describes the time or space required for the execution in a software
-        program. Big O is also used to classify algorithms according to their run time or space
-        requirements as the input size grows. It is a set of all algorithms that run no worse than a certain
-        speed. Big O notation characterizes functions according to their growth rates: different functions
-        with the same growth rate may be represented using the same O notation. The letter O is used
-        because the growth rate of a function is also referred to as the order of the function
+Answer:  : It is best to search for an element if the array is sorted. For an unsorted array however,
+         the best case is O(1) when the element is in first or last.
 
 What is the worst case to search an element from an array?
 Answer: The worst case complexity is O(n/2) (equivalent to O(n)) when the element in the array
