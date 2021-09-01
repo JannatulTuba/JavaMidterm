@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class FindLowestDifference {
 
 
-    public static void LowestDifference(int array1[], int array2[]){
+    public static int LowestDifference(int array1[], int array2[]){
 
         int lowestDiff = array1[0]-array2[0];
         int diff = 0;
@@ -22,7 +22,8 @@ public class FindLowestDifference {
                 }
             }
         }
-        System.out.println(Math.abs(lowestDiff));
+        int result = Math.abs(lowestDiff);
+        return result;
 
     }
     public static void main(String[] args) {
@@ -34,7 +35,7 @@ public class FindLowestDifference {
         int[] array1 = {30, 12, 5, 9, 2, 20, 33, 1};
         int[] array2 = {18, 25, 41, 47, 17, 36, 14, 19};
 
-        LowestDifference(array1,array2);
+        System.out.println(LowestDifference(array1,array2));
 
     }
 
