@@ -42,40 +42,52 @@ public class EmployeeInfo  extends AbstractEmployee{
 
     }
    public  void startService(){
-       System.out.println("************************* Employee Service******************************");
-       System.out.println("1: Calculate Salary \n 2: Calculate Pension \n 3: Apply For Vacation \n 4: Join Training \n 5:calculateEmployeeBonus \n 6: View Benefits \n Select Action");
+       System.out.println("********************************* \n    Employee Service   \n******************************");
+       employeeName();
+       employeeId();
+       System.out.println(" 1: Calculate Salary \n 2: Calculate Pension \n 3: Apply For Vacation \n 4: Join Training \n 5:Calculate Employee Bonus \n 6: View Benefits \n Select Action");
        int num = sc.nextInt();
        if(num == 1){
            System.out.println(calculateSalary());
-           startService();
+           //startService();
        }
        if(num == 2){
            System.out.println(calculateEmployeePension());
-           startService();
+          // startService();
        }
        if(num == 3){
         applyForVacation();
-           startService();
+         //  startService();
        }
        if(num == 4){
          joinTraining();
-           startService();
+          /// startService();
        }
        if(num == 5){
            System.out.println(calculateEmployeeBonus());
-           startService();
+           //startService();
        }
        if(num == 6){
          benefitLayout();
-           startService();
+       }else {
+           System.out.println("Enter Number between 1-6");
+            num = sc.nextInt();
        }
+       startService();
+
    }
-    //
+
     //employeeId() will return employee id.
     @Override
     public int employeeId(){
-        System.out.println(" ENTER EMPLOYEE ID: " );
-        int id = sc.nextInt();
+        System.out.println(" ENTER Your Employee ID: " );
+        int id =0;
+        try {
+           id = sc.nextInt();
+        }catch (Exception ex){
+            System.out.println("Enter Your Employee ID(number)");
+        }
+
         return id;
     }
 
@@ -84,7 +96,7 @@ public class EmployeeInfo  extends AbstractEmployee{
 
     @Override
     public String   employeeName(){
-        System.out.println(" Enter Employee Name: ");
+        System.out.println(" Please Enter Your Name: ");
         String name = sc.next();
         return name;
 
