@@ -48,6 +48,13 @@ public class Numbers {
          By following the same convention we used for Selection Sort, continue to do the same for all remaining sorting
             algorithms
          */
+        System.out.println("print");
+        // Bubble Sort
+        algo.bubbleSort(num);
+        long bubbleSortExecutionTime = algo.executionTime;
+        System.out.println("Total Execution Time of " + num.length + " numbers in Bubble Sort took: "
+                + bubbleSortExecutionTime + " milliseconds");
+
 
 
         /*
