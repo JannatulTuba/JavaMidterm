@@ -123,12 +123,9 @@ Answer: Java package is used to group related classes. There are two types of pa
         basic Java program
 
 What is an API? List some API's that you have used so far.
-Answer: Java package is used to group related classes. There are two types of packages in java:
-        Built-in Packages (Packages from the Java API)
-        User-defined Packages (User creates own packages)
-        The Java compiler (javac) imports the java.lang package (Object) internally by default. It is the
-        superclass of all classes and provides the fundamental classes that are necessary to design a
-        basic Java program
+Answer: API stands for Application Programming Interface. It is a software intermediary that
+        allows two applications to talk to each other. Some examples include but are not limited to:
+        JavaScript, XML, Python, Facebook, Spotify, and JSON
 
 Does java support multiple inheritance? Why or why not?
 Answer: Java does not support multiple inheritance. In multiple inheritance, properties of more
@@ -193,13 +190,7 @@ Answer: The keyword static in Java is mainly used for memory management. Static 
         without reference to any object.
 
 What is final keyword? When and how do we use it?
-Answer: The keyword static in Java is mainly used for memory management. Static can be
-        applied to variables, methods, blocks and nested classes. The keyword static belongs to the
-        class itself rather than an instance of the class. Static is used when the particular piece of code
-        is to be shared by all of the instance methods, also when the definition of the method should not
-        be changed or overridden. To use static, precede its declaration with the keyword static. When a
-        member is declared static, it can be accessed before any objects of its class are created, and
-        without reference to any object.
+Answer:  We use the keyword this final keyword when we do not want the value changed once initialized.
 
 Explain the difference between final, finally and finalize?
 Answer: Final, finally, and finalize are keywords in Java that are used in exception handling.
@@ -265,9 +256,9 @@ Answer:  The difference from JDK (Java Development Kit) and JVM (Java Virtual Ma
         monitoring java code, whereas JVM is an environment for executing Bytecode (.class files).
 
 What is the difference between JVM and JRE?
-Answer:  The difference from JDK (Java Development Kit) and JVM (Java Virtual Machine) is
-        that JDK is a software development kit which contains tools for development, debugging, and
-        monitoring java code, whereas JVM is an environment for executing Bytecode (.class files).
+Answer:  The Java Virtual Machine (JVM) is the process that runs the Java code, and the Java
+         Runtime Environment (JRE) are all files distributed to form the "environment" in which the Java
+         Virtual Machine (JVM) runs.
 
 Explain the difference between compile-time and run-time?
 Answer:Compile time is the time at which the source code is converted into an executable code
@@ -422,10 +413,11 @@ Answer: A framework is the body or platform of pre-written codes used by develop
         also helps dictate the structure of an application.
 
 What are the testing Frameworks available in Java?
-Answer: A framework is the body or platform of pre-written codes used by developers to
-        develop Java applications or web applications. It is a collection of predefined classes and
-        functions. Framework can be used by calling its methods, inheritance and listeners. Framework
-        also helps dictate the structure of an application.
+Answer: JUnit and testNG are both testing frameworks used for unit testing. JUnit is used quite
+       extensively with the selenium web driver. testNG framework was released after jUnit was used
+       for the same purpose, but with some additional functionalities. testNG can perform different
+       methods of testing such as unit testing, integration testing and end-to-end testing while jUnit is
+       used only for UNIT testing.
 
 What are jUnit and testNG?
 Answer: A framework is the body or platform of pre-written codes used by developers to
