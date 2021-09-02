@@ -207,7 +207,7 @@ Answer:  A class can have multiple constructors, as long as their signature (the
 If we don't have a constructor declared, what is called during the object creation?
 Answer: All classes have at least one constructor. If a class does not explicitly declare any, the
         Java compiler (javac) automatically provides a no-argument constructor, called the default
-        constructor.
+        constructor .
 
 What is "this" keyword in Java? When would we use it?
 Answer:  The “this” keyword refers to the current object in a method or constructor. The most
