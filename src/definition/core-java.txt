@@ -82,15 +82,10 @@ Answer: Abstraction is the process of hiding the implementation details from the
 
 
 Can you make an Object from an Interface and Abstract class? If yes or no, how would you do it?
-Answer: Path: Once Java is installed on the machine, it is required to set the path environment variable to conveniently run the executable
-         (javac.exe, java.exe, javadoc.exe, etc.) from any directory without having to type the full path of the command.
-
-        Classpath: A system environment variable used by the compiler (javac) and Java Virtual Machine (JVM). The compiler (javac) and the Java Virtual
-        Machine use Classpath to determine the location of required class files.
-
-        The difference: The path points to the location of the Java Runtime Environment (JRE) i.e. the java binary files such as the Java Virtual Machine
-         (JVM) and necessary libraries. The classpath points to the classes that have been developed so that the Java Virtual Machine (JVM) can find them and
-        load them when the program is executed.
+Answer: No, an object cannot be created from an Interface and Abstract class because it does
+        not have a complete implementation. The purpose of an abstract class is to function as a base
+        for subclasses. It acts like a template, or an empty or partially empty structure, which should be
+        extended and built upon before it is used.
 
 
 What is Access Modifier?
