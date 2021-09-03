@@ -24,6 +24,8 @@ public class ConnectToSqlDB {
 
     public static Properties loadProperties() throws IOException {
         Properties prop = new Properties();
+        String path = System.getProperty("user.dr")+ "/JavaMidterm-main/src/secret.properties";
+
         InputStream ism = new FileInputStream("src/secret.properties");
         prop.load(ism);
         ism.close();
@@ -47,7 +49,7 @@ public class ConnectToSqlDB {
         User user = null;
         try {
             Connection conn = connectToSqlDatabase();
-            String query = "SELECT * FROM Students";
+            String query = "SELECT * FROM Student";
             // create the java statement
             Statement st = conn.createStatement();
             // execute the query, and get a java resultset
@@ -123,6 +125,8 @@ public class ConnectToSqlDB {
             connectToSqlDatabase();
             ps = connect.prepareStatement("DROP TABLE IF EXISTS `" + tableName + "`;");
             ps.executeUpdate();
+
+
             ps = connect.prepareStatement(
                     "CREATE TABLE `" + tableName + "` (`ID` int(11) NOT NULL AUTO_INCREMENT,`SortingNumbers` bigint(20) DEFAULT NULL,  PRIMARY KEY (`ID`) );");
             ps.executeUpdate();
