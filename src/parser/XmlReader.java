@@ -23,10 +23,13 @@ public class XmlReader {
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
+
         File file = new File(path);
         Document doc = builder.parse(file);
+
         NodeList nodeList = doc.getDocumentElement().getChildNodes();
         List<Student> list = new ArrayList<>();
+
         for (int i = 0; i < nodeList.getLength(); i++) {
             Node node = nodeList.item(i);
             if (node instanceof Element) {
@@ -61,6 +64,22 @@ public class XmlReader {
     //This convert method need to be implemented.
     public String convertIntToChar(String score) {
         String grade = "";
+        int numScore = Integer.parseInt(score);
+        switch (numScore/10){
+            case 10: case 9:
+                grade = "A";
+                break;
+            case 8:
+                grade = "B";
+                break;
+            case 7:
+                grade = "C";
+                break;
+             default:
+                grade = "F";
+                break;
+
+        }
 
         return grade;
     }
